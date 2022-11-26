@@ -12,6 +12,7 @@ import com.example.firebasetest.navigation.DetailViewFragment
 import com.example.firebasetest.navigation.GridFragment
 import com.example.firebasetest.navigation.UserFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import java.util.jar.Manifest
 
 class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener{
 
@@ -49,6 +50,9 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         setContentView(R.layout.activity_main)
         val bottom_navigation = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         bottom_navigation.setOnNavigationItemSelectedListener(this)
+//        ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),1)
+
+        bottom_navigation.selectedItemId = R.id.action_home
     }
 
 
