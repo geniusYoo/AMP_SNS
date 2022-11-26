@@ -12,13 +12,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.firebasetest.ContentDTO
 import com.example.firebasetest.R
-<<<<<<< HEAD
+
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.ktx.Firebase
-=======
+
 import com.google.firebase.firestore.FirebaseFirestore
 import org.w3c.dom.Text
->>>>>>> main
 
 class DetailViewFragment : Fragment() {
     var fireStore : FirebaseFirestore? = null
@@ -35,9 +34,7 @@ class DetailViewFragment : Fragment() {
         return view
     }
 
-<<<<<<< HEAD
 
-=======
     inner class DetailViewRecyclerViewAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
         var contentDTOs : ArrayList<ContentDTO> = arrayListOf()
         var contentUidList : ArrayList<String> = arrayListOf()
@@ -86,5 +83,5 @@ class DetailViewFragment : Fragment() {
 
 
     }
->>>>>>> main
+
 }
