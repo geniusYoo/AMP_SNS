@@ -32,7 +32,7 @@ class SignUpActivity : AppCompatActivity() {
 
         // 비밀번호 일치하는지 확인
         checkBtn.setOnClickListener {
-            if(password.text.equals(checkPassword)) { // 일치하면 correctLabel에 표시
+            if(password.text.toString().equals(checkPassword.text.toString())) { // 일치하면 correctLabel에 표시
                 correctLabel.setText("equal password !!")
             }
             else { // 일치하지 않으면 checkpw, pw 둘다 비우고 correctLabel에 표시
@@ -44,13 +44,13 @@ class SignUpActivity : AppCompatActivity() {
 
         // 비밀번호가 일치하고 signup 버튼을 누르면 firebase 회원가입
         signupBtn.setOnClickListener { // signup 버튼 눌리면
-            if(correctLabel.toString().equals("equal password !!")) {
-                Firebase.auth.createUserWithEmailAndPassword(id.toString(), password.toString()).addOnCompleteListener {
-                    if(id.length()>0 && nickname.length()>0 && password.length()>0 && checkPassword.length()>0) {
+            if(correctLabel.text.toString().equals("equal password !!")) {
+                Firebase.auth.createUserWithEmailAndPassword(id.text.toString(), password.text.toString()).addOnCompleteListener {
+
                         if (it.isSuccessful) {
                             Firebase.auth.signInWithEmailAndPassword(
-                                id.toString(),
-                                password.toString()
+                                id.text.toString(),
+                                password.text.toString()
                             )
 
                             val currentUser = Firebase.auth.currentUser
@@ -73,8 +73,8 @@ class SignUpActivity : AppCompatActivity() {
                             }
                         } else {
                             correctLabel.setText("Failed.")
-                        }
-                    }
+
+                         }
                 }
             }
         }

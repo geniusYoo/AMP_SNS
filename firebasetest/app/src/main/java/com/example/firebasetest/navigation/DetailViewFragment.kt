@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.firebasetest.R
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.ktx.Firebase
 
 class DetailViewFragment : Fragment() {
     override fun onCreateView(
@@ -16,4 +18,6 @@ class DetailViewFragment : Fragment() {
         var view = LayoutInflater.from(activity).inflate(R.layout.fragment_detail,container,false)
         return view
     }
+
+
 }
