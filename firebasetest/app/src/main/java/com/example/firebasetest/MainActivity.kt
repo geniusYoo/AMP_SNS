@@ -12,19 +12,6 @@ import com.example.firebasetest.navigation.GridFragment
 import com.example.firebasetest.navigation.UserFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-
-<<<<<<< HEAD
-class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
-        setContentView(R.id.activity_main)
-//        bottom_navigation_main.setOnNavigationItemSelectedListener(this)
-    }
-
-//    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-//
-//    }
-=======
 class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener{
 
     override fun onNavigationItemSelected(p0: MenuItem): Boolean {
@@ -65,7 +52,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
     }
 
 
->>>>>>> main
+
 
 }
 
