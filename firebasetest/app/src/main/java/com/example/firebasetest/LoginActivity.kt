@@ -1,8 +1,10 @@
 package com.example.firebasetest
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.firebasetest.databinding.ActivityLoginBinding
@@ -15,13 +17,17 @@ class LoginActivity : AppCompatActivity() {
         val binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+
         binding.loginButton.setOnClickListener {
             val userEmail = binding.emailEditText.text.toString()
             val userPassword = binding.pwdEditText.text.toString()
             doLogin(userEmail, userPassword)
         }
         binding.signUPButton.setOnClickListener {
-
+            startActivity(
+                Intent(this, SignUpActivity::class.java)
+            )
         }
     }
 
@@ -38,4 +44,13 @@ class LoginActivity : AppCompatActivity() {
                 }
             }
     }
+
+    private fun hideKeyboard() {
+        if(this !== null && this.currentFocus!=null) {
+            val inputManager : InputMethodManager = this.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            inputManager.hideSoftInputFromWindow(this.currentFocus?.windowToken, InputMethodManager.HIDE_NOT_ALWAYS)
+        }
+    }
+
+
 }
