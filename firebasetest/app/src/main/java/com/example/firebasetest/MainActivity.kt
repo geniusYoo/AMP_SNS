@@ -24,12 +24,12 @@ import com.google.firebase.messaging.FirebaseMessaging
 class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
         super.onCreate(savedInstanceState, persistentState)
-//        setContentView()
+        setContentView(R.id.activity_main)
 //        bottom_navigation_main.setOnNavigationItemSelectedListener(this)
     }
 
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-
-    }
+//    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+//
+//    }
 
 }
