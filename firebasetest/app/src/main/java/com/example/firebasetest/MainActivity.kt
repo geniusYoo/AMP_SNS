@@ -1,26 +1,19 @@
+@file:Suppress("DEPRECATION")
+
 package com.example.firebasetest
 
-import android.content.ClipData
-import android.content.ClipboardManager
-import android.content.Context
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.util.Log
-import android.view.Menu
 import android.view.MenuItem
-import com.example.firebasetest.databinding.ActivityMainBinding
-import com.google.android.gms.tasks.OnCompleteListener
-import com.google.android.material.bottomnavigation.BottomNavigationView.OnNavigationItemReselectedListener
-import com.google.android.material.navigation.NavigationView.OnNavigationItemSelectedListener
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import com.example.firebasetest.navigation.AlarmFragment
+import com.example.firebasetest.navigation.DetailViewFragment
+import com.example.firebasetest.navigation.GridFragment
+import com.example.firebasetest.navigation.UserFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
-import com.google.firebase.messaging.FirebaseMessaging
 
+<<<<<<< HEAD
 class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
         super.onCreate(savedInstanceState, persistentState)
@@ -31,5 +24,49 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
 //    override fun onNavigationItemSelected(item: MenuItem): Boolean {
 //
 //    }
+=======
+class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener{
+
+    override fun onNavigationItemSelected(p0: MenuItem): Boolean {
+        when (p0.itemId) {
+            R.id.action_home -> {
+                var detailViewFragment = DetailViewFragment()
+                supportFragmentManager.beginTransaction().replace(R.id.main_content, detailViewFragment).commit()
+                return true
+            }
+            R.id.action_search -> {
+                var gridFragment = GridFragment()
+                supportFragmentManager.beginTransaction().replace(R.id.main_content, gridFragment).commit()
+                return true
+            }
+            R.id.action_add_photo -> {
+
+
+                return true
+            }
+            R.id.action_favorite_alarm -> {
+                var alarmFragment = AlarmFragment()
+                supportFragmentManager.beginTransaction().replace(R.id.main_content, alarmFragment).commit()
+                return true
+            }
+            R.id.action_account -> {
+                var userFragment = UserFragment()
+                supportFragmentManager.beginTransaction().replace(R.id.main_content, userFragment).commit()
+                return true
+            }
+        }
+        return false
+    }
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        val bottom_navigation = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        bottom_navigation.setOnNavigationItemSelectedListener(this)
+    }
+
+
+>>>>>>> main
 
 }
+
+
