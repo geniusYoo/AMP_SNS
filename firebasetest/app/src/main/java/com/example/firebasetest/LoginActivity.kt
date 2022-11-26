@@ -21,7 +21,7 @@ class LoginActivity : AppCompatActivity() {
             doLogin(userEmail, userPassword)
         }
         binding.signUPButton.setOnClickListener {
-            
+
         }
     }
 
