@@ -2,6 +2,7 @@
 
 package com.example.firebasetest
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
@@ -27,8 +28,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
                 return true
             }
             R.id.action_add_photo -> {
-
-
+                startActivity(Intent(this, AddPostActivity::class.java))
                 return true
             }
             R.id.action_favorite_alarm -> {
