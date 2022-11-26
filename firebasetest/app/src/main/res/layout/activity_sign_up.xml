@@ -12,7 +12,7 @@
     tools:context=".SignUpActivity">
 
     <EditText
-        android:id="@+id/id_editText"
+        android:id="@+id/id"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="24dp"
@@ -25,13 +25,13 @@
         android:paddingLeft="15dp"
         android:selectAllOnFocus="true"
         android:singleLine="false"
-        app:layout_constraintBottom_toTopOf="@+id/nickname_editText"
+        app:layout_constraintBottom_toTopOf="@+id/nickname"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/description" />
 
     <EditText
-        android:id="@+id/nickname_editText"
+        android:id="@+id/nickname"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="24dp"
@@ -45,18 +45,17 @@
         android:inputType="none"
         android:paddingLeft="15dp"
         android:selectAllOnFocus="true"
-        app:layout_constraintBottom_toTopOf="@+id/password_editText"
+        app:layout_constraintBottom_toTopOf="@+id/password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/id_editText" />
+        app:layout_constraintTop_toBottomOf="@+id/id" />
 
     <EditText
-        android:id="@+id/password_editText"
+        android:id="@+id/password"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginBottom="10dp"
         android:background="@drawable/rounded_layout"
         android:gravity="left|center_vertical"
         android:hint="@string/prompt_password"
@@ -65,26 +64,48 @@
         android:inputType="textPassword"
         android:paddingLeft="15dp"
         android:selectAllOnFocus="true"
-        app:layout_constraintBottom_toTopOf="@+id/signup"
+        app:layout_constraintBottom_toTopOf="@+id/checkpw"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nickname_editText" />
+        app:layout_constraintTop_toBottomOf="@+id/nickname" />
+
+    <EditText
+        android:id="@+id/checkpw"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/rounded_layout"
+        android:gravity="left|center_vertical"
+        android:hint="Check Password .."
+        android:imeActionLabel="@string/action_sign_in"
+        android:imeOptions="actionDone"
+        android:inputType="textPassword"
+        android:paddingLeft="15dp"
+        android:selectAllOnFocus="true"
+        app:layout_constraintBottom_toTopOf="@+id/signupButton"
+        app:layout_constraintEnd_toStartOf="@+id/checkButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password" />
 
     <Button
-        android:id="@+id/signup"
+        android:id="@+id/signupButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:layout_marginStart="24dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginBottom="64dp"
+        android:layout_marginBottom="30dp"
         android:background="@drawable/rounded_layout"
         android:enabled="true"
         android:text="SIGN UP"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.625"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password_editText" />
+        app:layout_constraintTop_toBottomOf="@+id/checkpw" />
 
     <TextView
         android:id="@+id/description"
@@ -97,7 +118,7 @@
         android:text="친구들의 사진과 글을 보려면 가입 하세요."
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/id_editText"
+        app:layout_constraintBottom_toTopOf="@+id/id"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
@@ -112,4 +133,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_launcher_foreground" />
+
+    <TextView
+        android:id="@+id/correctLabel"
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="7dp"
+        android:gravity="left|center_vertical"
+        android:text="incorrect password .."
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkpw" />
+
+    <Button
+        android:id="@+id/checkButton"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:gravity="left|center_vertical"
+        android:text="check"
+
+        app:layout_constraintBottom_toTopOf="@+id/signupButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.609"
+        app:layout_constraintStart_toEndOf="@+id/checkpw"
+        app:layout_constraintTop_toBottomOf="@+id/password"
+        app:layout_constraintVertical_bias="0.166" />
 </androidx.constraintlayout.widget.ConstraintLayout>

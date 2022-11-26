@@ -15,11 +15,14 @@ class LoginActivity : AppCompatActivity() {
         val binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//        binding.login.setOnClickListener {
-//            val userEmail = binding.username.text.toString()
-//            val password = binding.password.text.toString()
-//            doLogin(userEmail, password)
-//        }
+        binding.loginButton.setOnClickListener {
+            val userEmail = binding.emailEditText.text.toString()
+            val userPassword = binding.pwdEditText.text.toString()
+            doLogin(userEmail, userPassword)
+        }
+        binding.signUPButton.setOnClickListener {
+            
+        }
     }
 
     private fun doLogin(userEmail: String, password: String) {
