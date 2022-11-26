@@ -20,7 +20,7 @@
         android:layout_marginBottom="5dp"
         android:background="@drawable/rounded_layout"
         android:gravity="left|center_vertical"
-        android:hint="ID"
+        android:hint="android@gmail.com"
         android:inputType="none"
         android:paddingLeft="15dp"
         android:selectAllOnFocus="true"
@@ -39,7 +39,7 @@
         android:layout_marginBottom="5dp"
         android:background="@drawable/rounded_layout"
         android:gravity="left|center_vertical"
-        android:hint="Nickname"
+        android:hint="nickname"
         android:imeActionLabel="@string/action_sign_in"
         android:imeOptions="actionDone"
         android:inputType="none"
@@ -58,7 +58,7 @@
         android:layout_marginEnd="24dp"
         android:background="@drawable/rounded_layout"
         android:gravity="left|center_vertical"
-        android:hint="@string/prompt_password"
+        android:hint="password"
         android:imeActionLabel="@string/action_sign_in"
         android:imeOptions="actionDone"
         android:inputType="textPassword"
@@ -78,7 +78,7 @@
         android:layout_marginEnd="10dp"
         android:background="@drawable/rounded_layout"
         android:gravity="left|center_vertical"
-        android:hint="Check Password .."
+        android:hint="password double check"
         android:imeActionLabel="@string/action_sign_in"
         android:imeOptions="actionDone"
         android:inputType="textPassword"
@@ -142,23 +142,24 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="7dp"
         android:gravity="left|center_vertical"
-        android:text="incorrect password .."
+        android:text=""
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkpw" />
 
     <Button
         android:id="@+id/checkButton"
-        android:layout_width="70dp"
-        android:layout_height="50dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="10dp"
+        android:background="@android:drawable/checkbox_on_background"
         android:gravity="left|center_vertical"
-        android:text="check"
 
         app:layout_constraintBottom_toTopOf="@+id/signupButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.609"
         app:layout_constraintStart_toEndOf="@+id/checkpw"
         app:layout_constraintTop_toBottomOf="@+id/password"
-        app:layout_constraintVertical_bias="0.166" />
+        app:layout_constraintVertical_bias="0.306" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
