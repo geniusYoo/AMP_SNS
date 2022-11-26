@@ -15,6 +15,7 @@ class LoginActivity : AppCompatActivity() {
         val binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+<<<<<<< Updated upstream
         binding.loginButton.setOnClickListener {
             val userEmail = binding.emailEditText.text.toString()
             val userPassword = binding.pwdEditText.text.toString()
@@ -22,6 +23,12 @@ class LoginActivity : AppCompatActivity() {
         }
         binding.signUPButton.setOnClickListener {
             
+=======
+        binding.login.setOnClickListener {
+            val userEmail = binding.username.text.toString()
+            val password = binding.password.text.toString()
+            doLogin(userEmail, password)
+>>>>>>> Stashed changes
         }
     }
 

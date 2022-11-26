@@ -12,7 +12,11 @@
     tools:context=".LoginActivity">
 
     <Button
+<<<<<<< Updated upstream
         android:id="@+id/loginButton"
+=======
+        android:id="@+id/login_Login"
+>>>>>>> Stashed changes
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_gravity="start"
@@ -20,12 +24,21 @@
         android:layout_marginTop="32dp"
         android:background="@drawable/rounded_layout"
         android:enabled="true"
+<<<<<<< Updated upstream
         android:text="Login"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pwdEditText" />
 
     <Button
         android:id="@+id/signUPButton"
+=======
+        android:text="LOGIN"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password_editText3" />
+
+    <Button
+        android:id="@+id/login_signUp"
+>>>>>>> Stashed changes
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_gravity="start"
@@ -35,10 +48,17 @@
         android:enabled="true"
         android:text="SIGN UP"
         app:layout_constraintEnd_toEndOf="parent"
+<<<<<<< Updated upstream
         app:layout_constraintTop_toBottomOf="@+id/pwdEditText" />
 
     <EditText
         android:id="@+id/pwdEditText"
+=======
+        app:layout_constraintTop_toBottomOf="@+id/password_editText3" />
+
+    <EditText
+        android:id="@+id/password_editText3"
+>>>>>>> Stashed changes
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="24dp"
@@ -55,10 +75,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+<<<<<<< Updated upstream
         app:layout_constraintTop_toBottomOf="@+id/emailEditText" />
 
     <EditText
         android:id="@+id/emailEditText"
+=======
+        app:layout_constraintTop_toBottomOf="@+id/loginID_editText" />
+
+    <EditText
+        android:id="@+id/loginID_editText"
+>>>>>>> Stashed changes
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="24dp"
@@ -73,10 +100,17 @@
         android:singleLine="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+<<<<<<< Updated upstream
         app:layout_constraintTop_toBottomOf="@+id/titleText" />
 
     <TextView
         android:id="@+id/titleText"
+=======
+        app:layout_constraintTop_toBottomOf="@+id/loginText" />
+
+    <TextView
+        android:id="@+id/loginText"
+>>>>>>> Stashed changes
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
