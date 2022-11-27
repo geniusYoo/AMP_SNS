@@ -1,16 +1,12 @@
 package com.example.firebasetest
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.inputmethod.InputMethod
-import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import com.example.firebasetest.databinding.ActivityLoginBinding
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -21,7 +17,7 @@ class SignUpActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
 
-        val id = findViewById<EditText>(R.id.id)
+        val email = findViewById<EditText>(R.id.email)
         val password = findViewById<EditText>(R.id.password)
         val checkPassword = findViewById<EditText>(R.id.checkpw)
         val nickname = findViewById<EditText>(R.id.nickname)
@@ -45,18 +41,18 @@ class SignUpActivity : AppCompatActivity() {
         // 비밀번호가 일치하고 signup 버튼을 누르면 firebase 회원가입
         signupBtn.setOnClickListener { // signup 버튼 눌리면
             if(correctLabel.text.toString().equals("equal password !!")) {
-                Firebase.auth.createUserWithEmailAndPassword(id.text.toString(), password.text.toString()).addOnCompleteListener {
+                Firebase.auth.createUserWithEmailAndPassword(email.text.toString(), password.text.toString()).addOnCompleteListener {
 
                         if (it.isSuccessful) {
                             Firebase.auth.signInWithEmailAndPassword(
-                                id.text.toString(),
+                                email.text.toString(),
                                 password.text.toString()
                             )
 
                             val currentUser = Firebase.auth.currentUser
                             val db = Firebase.firestore
                             val user =
-                                User(currentUser?.uid, id.text.toString(), nickname.text.toString())
+                                User(currentUser?.uid, email.text.toString(), nickname.text.toString())
 
                             if (currentUser != null) {
                                 db.collection("user").document(currentUser.uid).set(user)
