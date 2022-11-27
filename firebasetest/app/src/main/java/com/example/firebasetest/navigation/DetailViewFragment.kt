@@ -37,12 +37,10 @@ class DetailViewFragment : Fragment() {
         return view
     }
 
-
     inner class DetailViewRecyclerViewAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
         var contentDTOs : ArrayList<ContentDTO> = arrayListOf()
         var contentUidList : ArrayList<String> = arrayListOf()
         init {
-
             fireStore?.collection("images")?.orderBy("timestamp")?.addSnapshotListener { querySnapShot, firebaseFirestore ->
                 contentDTOs.clear()
                 contentUidList.clear()
@@ -54,8 +52,6 @@ class DetailViewFragment : Fragment() {
                 }
                 notifyDataSetChanged()
             }
-
-
         }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -121,5 +117,4 @@ class DetailViewFragment : Fragment() {
             }
         }
     }
-
 }

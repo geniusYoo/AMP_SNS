@@ -17,7 +17,6 @@ import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.ktx.storage
 
-
 class StorageActivity : AppCompatActivity() {
     lateinit var storage: FirebaseStorage
     lateinit var binding: ActivityStorageBinding
@@ -47,7 +46,6 @@ class StorageActivity : AppCompatActivity() {
         binding.buttonUpload.setOnClickListener {
             uploadDialog()
         }
-
         binding.buttonListUploadedPhotos.setOnClickListener {
             listPhotosDialog()
         }
@@ -85,7 +83,6 @@ class StorageActivity : AppCompatActivity() {
                     .setTitle("Uploaded Photos")
                     .setItems(itemsString.toTypedArray(), {_, i -> }).show()
             }.addOnFailureListener {
-
             }
     }
 
