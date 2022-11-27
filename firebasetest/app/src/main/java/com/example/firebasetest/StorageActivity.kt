@@ -17,6 +17,7 @@ import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.ktx.storage
 
+
 class StorageActivity : AppCompatActivity() {
     lateinit var storage: FirebaseStorage
     lateinit var binding: ActivityStorageBinding
