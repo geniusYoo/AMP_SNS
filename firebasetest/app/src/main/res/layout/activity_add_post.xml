@@ -46,6 +46,7 @@
         android:layout_marginTop="20dp"
         android:hint="add text .."
         android:inputType="textMultiLine"
+        android:minHeight="48dp"
         app:hintAnimationEnabled="false"
         app:hintEnabled="false"
         app:hintTextColor="#605353"
@@ -60,12 +61,12 @@
         android:id="@+id/addButton"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="50dp"
         android:layout_marginBottom="345dp"
         android:text="ADD NEW POST"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/addTextByUser" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
