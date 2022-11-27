@@ -49,6 +49,7 @@ class SignUpActivity : AppCompatActivity() {
                                 password.text.toString()
                             )
 
+                            
                             val currentUser = Firebase.auth.currentUser
                             val db = Firebase.firestore
                             val user =
