@@ -45,7 +45,7 @@ class UserFragment : Fragment() {
         currentUserUid = auth?.currentUser?.uid
 
         if(uid == currentUserUid) {
-            fragmentView?.findViewById<Button>(R.id.account_btn_follow_signout)?.text = getString(R.string.signout)
+            fragmentView?.findViewById<Button>(R.id.account_btn_follow_signout)?.text = "Sign Out"
             fragmentView?.findViewById<Button>(R.id.account_btn_follow_signout)?.setOnClickListener {
                 activity?.finish()
                 startActivity(Intent(activity, LoginActivity::class.java))
@@ -53,7 +53,7 @@ class UserFragment : Fragment() {
             }
         }
         else {
-            fragmentView?.findViewById<Button>(R.id.account_btn_follow_signout)?.text = getString(R.string.follow)
+            fragmentView?.findViewById<Button>(R.id.account_btn_follow_signout)?.text = "Follow"
             var mainActivity = (activity as MainActivity)
             mainActivity?.findViewById<TextView>(R.id.toolbar_username)?.text = arguments?.getString("userId")
             mainActivity?.findViewById<ImageView>(R.id.toolbar_btn_back)?.setOnClickListener {
@@ -75,6 +75,7 @@ class UserFragment : Fragment() {
             activity?.startActivityForResult(photoPickerIntent, PICK_PROFILE_FROM_ALBUM)
         }
         getProfileImage()
+        getFollowerAndFollowing()
         return fragmentView
     }
 
@@ -88,12 +89,11 @@ class UserFragment : Fragment() {
             if(followDTO?.followerCount != null) {
                 fragmentView?.findViewById<TextView>(R.id.account_tv_follower_count)?.text = followDTO?.followerCount?.toString()
                 if(followDTO?.followers?.containsKey(currentUserUid!!)){
-                    fragmentView?.findViewById<Button>(R.id.account_btn_follow_signout)?.text = getString(R.string.follow_cancel)
+                    fragmentView?.findViewById<Button>(R.id.account_btn_follow_signout)?.text = "Follow Cancel"
                 }
                 else {
                     if(uid != currentUserUid) {
-                        fragmentView?.findViewById<Button>(R.id.account_btn_follow_signout)?.text = getString(R.string.follow)
-                    }
+                        fragmentView?.findViewById<Button>(R.id.account_btn_follow_signout)?.text = "Follow" }
                 }
             }
         }
@@ -106,22 +106,23 @@ class UserFragment : Fragment() {
             if (followDTO == null) {
                 followDTO = FollowDTO()
                 followDTO!!.followingCount = 1
-                followDTO!!.followers[uid!!] = true
+                followDTO!!.followings[uid!!] = true
 
                 transaction.set(tsDocFollowing,followDTO)
                 return@runTransaction
             }
             if(followDTO.followings.containsKey(uid)) {
                 followDTO?.followingCount = followDTO?.followingCount - 1
-                followDTO?.followers?.remove(uid)
+                followDTO?.followings?.remove(uid)
             }
             else {
                 followDTO?.followingCount = followDTO?.followingCount + 1
-                followDTO?.followers?.remove(uid)
+                followDTO?.followings[uid!!] = true
             }
             transaction.set(tsDocFollowing,followDTO)
             return@runTransaction
         }
+
         var tsDocFollower = firestore?.collection("users")?.document(uid!!)
         firestore?.runTransaction { transaction ->
             var followDTO = transaction.get(tsDocFollower!!).toObject(FollowDTO::class.java)
@@ -133,6 +134,7 @@ class UserFragment : Fragment() {
                 transaction.set(tsDocFollower, followDTO!!)
                 return@runTransaction
             }
+
             if(followDTO!!.followers.containsKey(currentUserUid)) {
                 followDTO!!.followerCount = followDTO!!.followerCount - 1
                 followDTO!!.followers.remove(currentUserUid!!)
