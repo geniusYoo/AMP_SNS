@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp">
         <ImageView
-            android:id="@+id/detailViewItem_profile_img"
+            android:id="@+id/detailViewItem_profile_image"
             android:src="@mipmap/ic_launcher"
             android:layout_margin="7.5dp"
             android:layout_width="35dp"
@@ -30,25 +30,25 @@
         android:layout_width="match_parent"
         android:layout_height="50dp">
         <ImageView
-            android:id="@+id/detailViewItem_favorite_iv"
+            android:id="@+id/detailViewItem_favorite_imageView"
             android:src="@drawable/ic_favorite_border"
             android:layout_width="35dp"
             android:layout_height="35dp"/>
         <ImageView
-            android:id="@+id/detailViewItem_comment_iv"
+            android:id="@+id/detailViewItem_comment_imageView"
             android:src="@drawable/ic_chat_black"
             android:layout_width="35dp"
             android:layout_height="35dp"/>
     </LinearLayout>
     <TextView
-        android:id="@+id/detailViewItem_favoriteCounter_tv"
+        android:id="@+id/detailViewItem_favoriteCounter_textView"
         android:text="like 0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
     <TextView
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:id="@+id/detailViewItem_explain_tv"
+        android:id="@+id/detailViewItem_explain_textView"
         android:text="Explain Content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>

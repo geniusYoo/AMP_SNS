@@ -45,12 +45,7 @@ class LoginActivity : AppCompatActivity() {
             }
     }
 
-    private fun hideKeyboard() {
-        if(this !== null && this.currentFocus!=null) {
-            val inputManager : InputMethodManager = this.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-            inputManager.hideSoftInputFromWindow(this.currentFocus?.windowToken, InputMethodManager.HIDE_NOT_ALWAYS)
-        }
-    }
+
 
 
 }

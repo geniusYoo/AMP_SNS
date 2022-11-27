@@ -61,11 +61,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".MainActivity"
             android:exported="false">
-
         </activity>
+        <activity android:name="com.example.firebasetest.navigation.CommentActivity" />
+
     </application>
 
 </manifest>

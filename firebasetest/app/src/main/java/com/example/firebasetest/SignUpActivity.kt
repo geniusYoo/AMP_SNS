@@ -25,7 +25,6 @@ class SignUpActivity : AppCompatActivity() {
         val signupBtn = findViewById<Button>(R.id.signupButton)
         val checkBtn = findViewById<Button>(R.id.checkButton)
 
-
         // 비밀번호 일치하는지 확인
         checkBtn.setOnClickListener {
             if(password.text.toString().equals(checkPassword.text.toString())) { // 일치하면 correctLabel에 표시
@@ -48,8 +47,6 @@ class SignUpActivity : AppCompatActivity() {
                                 email.text.toString(),
                                 password.text.toString()
                             )
-
-                            
                             val currentUser = Firebase.auth.currentUser
                             val db = Firebase.firestore
                             val user =
