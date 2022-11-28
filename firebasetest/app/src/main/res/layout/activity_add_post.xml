@@ -19,12 +19,16 @@
 
         <TextView
             android:id="@+id/addPostLabel"
-            android:layout_width="wrap_content"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="New Post"
+            android:text="new post"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/blacksword"
+
+
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textSize="28sp" />
+            android:textSize="40sp" />
     </androidx.appcompat.widget.Toolbar>
 
     <ImageView
@@ -44,7 +48,7 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:hint="add text .."
+        android:hint="Please enter text for posting -:)"
         android:inputType="textMultiLine"
         android:minHeight="48dp"
         app:hintAnimationEnabled="false"

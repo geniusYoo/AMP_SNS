@@ -28,28 +28,39 @@
         android:layout_marginLeft="8dp"
         android:gravity="center_vertical"
         android:layout_width="match_parent"
+
         android:layout_height="50dp">
+
         <ImageView
             android:id="@+id/detailViewItem_favorite_imageView"
-            android:src="@drawable/ic_favorite_border"
             android:layout_width="35dp"
-            android:layout_height="35dp"/>
+            android:layout_height="35dp"
+
+            android:src="@drawable/heart" />
+
         <ImageView
             android:id="@+id/detailViewItem_comment_imageView"
-            android:src="@drawable/ic_chat_black"
             android:layout_width="35dp"
-            android:layout_height="35dp"/>
+            android:layout_marginLeft="8dp"
+            android:layout_height="35dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/comment" />
     </LinearLayout>
+
     <TextView
         android:id="@+id/detailViewItem_favoriteCounter_textView"
-        android:text="like 0"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_marginLeft="21.8dp"
+        android:layout_marginTop="-12dp"
+        android:layout_height="wrap_content"
+        android:text="0" />
+
     <TextView
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
+        android:layout_marginTop="5dp"
         android:id="@+id/detailViewItem_explain_textView"
-        android:text="Explain Content"
+        android:text="Explain Contents"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 

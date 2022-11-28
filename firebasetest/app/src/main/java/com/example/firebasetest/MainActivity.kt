@@ -45,11 +45,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
                 startActivity(Intent(this, AddPostActivity::class.java))
                 return true
             }
-            R.id.action_favorite_alarm -> {
-                var alarmFragment = AlarmFragment()
-                supportFragmentManager.beginTransaction().replace(R.id.main_content, alarmFragment).commit()
-                return true
-            }
+
             R.id.action_account -> {
                 var userFragment = UserFragment()
                 var bundle = Bundle()

@@ -67,7 +67,7 @@ class DetailViewFragment : Fragment() {
             viewHolder.findViewById<TextView>(R.id.detailViewItem_profile_textView).text = contentDTOs!![position].userId
             Glide.with(holder.itemView.context).load(contentDTOs!![position].imageUrl).into(viewHolder.findViewById<ImageView>(R.id.detailViewItem_imageView_content))
             viewHolder.findViewById<TextView>(R.id.detailViewItem_explain_textView).text = contentDTOs!![position].explain
-            viewHolder.findViewById<TextView>(R.id.detailViewItem_favoriteCounter_textView).text="Likes "+contentDTOs!![position].favoriteCount
+            viewHolder.findViewById<TextView>(R.id.detailViewItem_favoriteCounter_textView).text= contentDTOs!![position].favoriteCount.toString()
             Glide.with(holder.itemView.context).load(contentDTOs!![position].imageUrl).into(viewHolder.findViewById<ImageView>(R.id.detailViewItem_profile_image))
 
             viewHolder.findViewById<ImageView>(R.id.detailViewItem_favorite_imageView).setOnClickListener{
