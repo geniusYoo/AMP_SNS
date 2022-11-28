@@ -77,9 +77,9 @@ class DetailViewFragment : Fragment() {
             }
 
             if(contentDTOs!![position].favorites.containsKey(uid)){
-                viewHolder.findViewById<ImageView>(R.id.detailViewItem_favorite_imageView).setImageResource(R.drawable.ic_favorite)
+                viewHolder.findViewById<ImageView>(R.id.detailViewItem_favorite_imageView).setImageResource(R.drawable.filledheart)
             }else{
-                viewHolder.findViewById<ImageView>(R.id.detailViewItem_favorite_imageView).setImageResource(R.drawable.ic_favorite_border)
+                viewHolder.findViewById<ImageView>(R.id.detailViewItem_favorite_imageView).setImageResource(R.drawable.emptyheart)
             }
 
             viewHolder.findViewById<ImageView>(R.id.detailViewItem_profile_image).setOnClickListener {
