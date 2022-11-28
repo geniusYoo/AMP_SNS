@@ -18,6 +18,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.ktx.Firebase
 
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.Query
 import org.w3c.dom.Text
 
 class DetailViewFragment : Fragment() {
@@ -41,7 +42,7 @@ class DetailViewFragment : Fragment() {
         var contentDTOs : ArrayList<ContentDTO> = arrayListOf()
         var contentUidList : ArrayList<String> = arrayListOf()
         init {
-            fireStore?.collection("images")?.orderBy("timestamp")?.addSnapshotListener { querySnapShot, firebaseFirestore ->
+            fireStore?.collection("images")?.orderBy("timestamp", Query.Direction.DESCENDING)?.addSnapshotListener { querySnapShot, firebaseFirestoreException ->
                 contentDTOs.clear()
                 contentUidList.clear()
                 if(querySnapShot == null) return@addSnapshotListener
@@ -53,6 +54,7 @@ class DetailViewFragment : Fragment() {
                 notifyDataSetChanged()
             }
         }
+
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
             var view = LayoutInflater.from(parent.context).inflate(R.layout.item_detail,parent,false)
