@@ -26,7 +26,6 @@ import com.google.firebase.storage.UploadTask
 import java.util.jar.Manifest
 
 class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener{
-
     override fun onNavigationItemSelected(p0: MenuItem): Boolean {
         setToolbarDefault()
         when (p0.itemId) {
